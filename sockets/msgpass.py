@@ -13,7 +13,6 @@ def recv_message(sock):
     msg = recv_exactly(sock, sz)
     return msg
 
-
 def send_size(sock, sz: int):
     sock.sendall(sz.to_bytes(8, "big"))
 
@@ -33,4 +32,6 @@ def recv_exactly(sock, nbytes):
         msg += chunk
         nbytes -= len(chunk)
     return msg
+
+
 

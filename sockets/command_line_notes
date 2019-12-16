@@ -1,0 +1,21 @@
+
+
+# server
+
+
+pzuradzki@prz-mbp ~/d/p/l/r/sockets> python3 -i msgpass.py
+>>> from socket import *
+>>> sock = socket(AF_INET, SOCK_STREAM)
+>>> sock.bind(('', 26000))
+>>> sock.listen(1)
+>>> client, addr = sock.accept()
+>>> send_message(client, b'some message')
+
+# client
+pzuradzki@prz-mbp ~/d/p/l/r/sockets> python3 -i msgpass.py
+>>> from socket import *
+>>> sock = socket(AF_INET, SOCK_STREAM)
+>>> sock.connect(('localhost', 26000))
+>>> recv_message(sock)
+b'some message'
+
