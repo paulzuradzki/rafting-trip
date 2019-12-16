@@ -1,5 +1,0 @@
-network: dabeaz-class
-pw: pythonpython
-
-http://www.dabeaz.com/raft.zip
-
