@@ -37,19 +37,29 @@ def decode_request(msg):
 def encode_result(result):
     return pickle.dumps(result)
 
+client_lock = threading.Lock()
+
 def handle_client(client):
     while True:
         msg = msgpass.recv_message(client)
         method, args = decode_request(msg)
         print('request:', method, args)
-        if method == 'get':
-            result = get(*args)
-        elif method == 'set':
-            set(*args)
-            result = "ok"
-        elif method == "delete":
-            delete(*args)
-            result = "ok"
+
+        try:
+            with client_lock:
+                # guaranteed that only one thread at a time is in here
+                if method == 'get':
+                    result = get(*args)
+                elif method == 'set':
+                    set(*args)
+                    result = "ok"
+                elif method == "delete":
+                    delete(*args)
+                else:
+                    raise RuntimeError(f"Bad method {method}")
+        except:
+            result = ("error", err)
+
         msgpass.send_message(client,
             encode_result(result)
             )
