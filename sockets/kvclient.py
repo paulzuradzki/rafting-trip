@@ -10,7 +10,7 @@ def encode_request(method, *args) -> bytes:
     # return the message
     return pickle.dumps((method, args))
 
-def decode_result(msg):
+def decode_result(msg:bytes):
     return pickle.loads(msg)
 
 class KVStore:

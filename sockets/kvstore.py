@@ -17,6 +17,7 @@ def delete(key):
 
 # put on the network (somehow)
 from socket import *
+import threading
 
 def run_server(address):
     sock = socket(AF_INET, SOCK_STREAM)
@@ -26,7 +27,8 @@ def run_server(address):
     print(f"server running at {address}")
     while True:
         client, addr = sock.accept()
-        handle_client(client)
+        # handle_client(client)  # <<<<CHANGE
+        threading.Thread(target=handle_client, args=(client))
 
 import pickle
 def decode_request(msg):
