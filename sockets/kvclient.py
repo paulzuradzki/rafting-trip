@@ -18,12 +18,22 @@ class KVStore:
         self.sock = socket(AF_INET, SOCK_STREAM)
         self.sock.connect(address)
 
-    def get(self, key):
-        msgpass.send_message(self.sock,
-                             encode_request('get', key)
-                             )
-        resp = msgpass.recv_message(self.sock)
-        return decode_result(resp)
+    # fancy way
+    def __getattr__(self, method):
+        def do_request(*args):
+            msgpass.send_message(self.sock,
+                                 encode_request(method, *args)
+                                 )
+            resp = msgpass.recv_message(self.sock)
+            return decode_result(resp)
+        return do_request
+
+    # def get(self, key):
+    #     msgpass.send_message(self.sock,
+    #                          encode_request('get', key)
+    #                          )
+    #     resp = msgpass.recv_message(self.sock)
+    #     return decode_result(resp)
 
     def set(self, key, value):
         msgpass.send_message(self.sock,
@@ -39,7 +49,3 @@ class KVStore:
         resp = msgpass.recv_message(self.sock)
         return decode_result(resp)
 
-"""
-kvStore = KVStore('localhost')
-kvStore.set('a', '1')
-"""

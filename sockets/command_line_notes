@@ -19,3 +19,14 @@ pzuradzki@prz-mbp ~/d/p/l/r/sockets> python3 -i msgpass.py
 >>> recv_message(sock)
 b'some message'
 
+# while running $ python3 kvstore.py
+prz-mbp:sockets pzuradzki$ python3 -i kvclient.py
+>>> kv = KVStore(('localhost', 30000))
+>>> kv.set('a', 4)
+'ok'
+>>> kv.get('a')
+4
+>>> kv.set('c',5)
+'ok'
+>>> kv.delete('c')
+'ok'
