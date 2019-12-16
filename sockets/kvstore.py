@@ -28,7 +28,7 @@ def run_server(address):
     while True:
         client, addr = sock.accept()
         # handle_client(client)  # <<<<CHANGE
-        threading.Thread(target=handle_client, args=(client))
+        threading.Thread(target=handle_client, args=(client,)).start()
 
 import pickle
 def decode_request(msg):
