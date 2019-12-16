@@ -14,6 +14,8 @@ def echo_server(address):
 
 def echo_handler(client):
     while True:
+        msg = msgpass.rec_message(client)
+        msgpass.send_message(client, msg)
         data = client.recv(10000)
         if not data:
             break
