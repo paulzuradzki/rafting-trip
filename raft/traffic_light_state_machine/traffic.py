@@ -6,6 +6,8 @@ import colorama
 
 # TODO: add client interactions. E.g., unscheduled button push. Use queue pattern.
 
+SLEEP_BEAT = 0.1
+
 class trafficLight:
     """Simulate a traffic light state machine."""
 
@@ -70,7 +72,7 @@ class trafficLight:
             self.print_state()
             # print(colorama.Fore.BLACK, end='')
 
-            time.sleep(0.2)
+            time.sleep(SLEEP_BEAT)
             self.x_time += 1
             t1 = threading.Thread(target=self.change_state())
             t1.start()
@@ -83,9 +85,10 @@ class trafficLight:
         if self.x_time in [10, 15, 25, 30]:
             self.current_state = self.get_next_state()
             self.state_change_warning()
-            if self.x_time == 30:
-                self.x_time == 0
+        if self.x_time >= 30:
+            self.x_time = 0
 
+# test initial state
 assert trafficLight().get_current_state() == 'a'
 assert trafficLight().get_current_ix() == 0
 assert trafficLight().get_next_state() == 'b'
