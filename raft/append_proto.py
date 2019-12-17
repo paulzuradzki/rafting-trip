@@ -21,4 +21,5 @@ def rappend(log, ix, entry):
         print(True)
         return True
 
-rappend(log, 2, {'key': 'val'})
+
+
