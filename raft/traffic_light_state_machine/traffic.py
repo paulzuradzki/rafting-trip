@@ -1,5 +1,6 @@
 from collections import OrderedDict
 from queue import Queue
+import time
 
 class trafficLight:
 
@@ -12,18 +13,7 @@ class trafficLight:
                     })
 
         self.q = Queue()
-
-    def cycle(self, iterable):
-        # cycle('ABCD') --> A B C D A B C D A B C D ...
-        saved = []
-        for element in iterable:
-            yield element
-            saved.append(element)
-        while saved:
-            for element in saved:
-                  yield element
-
-    # g = cycle(states)
+        self.time = 0
 
     def get_current_state(self):
         return self.current_state
@@ -45,6 +35,16 @@ class trafficLight:
             next_state_data = states_items[self.get_current_ix() + 1]
             next_state = next_state_data[0]
             return next_state
+
+    def timer(self):
+        while True:
+            time.sleep(1)
+            self.time += 1
+            print(f"t: {self.time}", f"state: {self.current_state}")
+
+    def change_state(self):
+        self.current_state = self.get_next_state()
+
 
 assert trafficLight().get_current_state() == 'a'
 assert trafficLight().get_current_ix() == 0
