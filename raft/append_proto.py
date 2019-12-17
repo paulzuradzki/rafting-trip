@@ -1,3 +1,5 @@
+# prototype raft append mechanism
+
 log = [ ]
 
 # def rappend(term=0,

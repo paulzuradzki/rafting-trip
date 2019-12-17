@@ -2,9 +2,9 @@ from collections import OrderedDict
 import time
 import threading
 import colorama
-from queue import Queue
+# from queue import Queue
 
-# TODO: add client interactions. E.g., unscheduled button push.
+# TODO: add client interactions. E.g., unscheduled button push. Use queue pattern.
 
 class trafficLight:
     """Simulate a traffic light state machine."""
@@ -13,11 +13,11 @@ class trafficLight:
         self.current_state = 'a'
         self.states = OrderedDict({'a': ('green', 'red', 10),
                     'b': ('yellow', 'red', 5),
-                    'c': ('red', 'green', 20),
+                    'c': ('red', 'green', 10),
                     'd': ('red', 'yellow', 5)
                     })
 
-        self.q = Queue()
+        # self.q = Queue()
         self.x_time = 0
         self.clock = 0
 
@@ -70,19 +70,21 @@ class trafficLight:
             self.print_state()
             # print(colorama.Fore.BLACK, end='')
 
-            time.sleep(0.5)
+            time.sleep(0.2)
             self.x_time += 1
             t1 = threading.Thread(target=self.change_state())
             t1.start()
 
+    def state_change_warning(self):
+        print(colorama.Fore.CYAN + 'state change!')
+        print(colorama.Fore.BLACK, end='')
+
     def change_state(self):
-        if self.x_time >= 3:
+        if self.x_time in [10, 15, 25, 30]:
             self.current_state = self.get_next_state()
-            self.x_time = 0
-
-            print(colorama.Fore.CYAN + 'state change!')
-            print(colorama.Fore.BLACK, end='')
-
+            self.state_change_warning()
+            if self.x_time == 30:
+                self.x_time == 0
 
 assert trafficLight().get_current_state() == 'a'
 assert trafficLight().get_current_ix() == 0
@@ -91,3 +93,4 @@ assert trafficLight().get_next_state() == 'b'
 if __name__ == "__main__":
     TL = trafficLight()
     print(f"TL: {TL}")
+    TL.start()
