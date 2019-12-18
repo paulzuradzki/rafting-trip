@@ -1,3 +1,26 @@
+"""
+"""
+
+"""
+Implementation strategies
+* start from networking and build on time
+* focus on state machine
+* focus on log append entry mechanism
+
+log -> leader election
+
+network
+controller - "start()", "run()" type methods
+state machine
+
+debugging
+    livelocks - log locks and unlock; figure out un-released locks
+    incorrect or incomplete RPC handlers 
+    failure to follow The Rules
+    term confusion
+
+
+"""
 
 """
 
@@ -42,10 +65,6 @@ server
     get election timeout
 
     setOnReceiveMessageCallback
-
-
-
-
 
 cluster config
     instances: {2, 5, 6, 7, 11}
@@ -133,10 +152,6 @@ test
     one vote per server per election
     leader has majority vote
     leader has max term and committed logs
-
-
-
-
 
 """
 
