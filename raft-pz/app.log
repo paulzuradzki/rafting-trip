@@ -1,0 +1,182 @@
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'), Entry(term=1, entry='set y=1')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'), Entry(term=1, entry='set y=1')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - FALSE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0'),
+ Entry(term=3, entry='set y=7')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0'),
+ Entry(term=3, entry='set y=7')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0'),
+ Entry(term=3, entry='set y=7'),
+ Entry(term=3, entry='set x=5')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - BEFORE: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0'),
+ Entry(term=3, entry='set y=7'),
+ Entry(term=3, entry='set x=5')]
+
+19-Dec-19 11:32:53 - 74950 - root - INFO - TRUE
+19-Dec-19 11:32:53 - 74950 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1'),
+ Entry(term=1, entry='set y=1'),
+ Entry(term=1, entry='set y=9'),
+ Entry(term=2, entry='set x=2'),
+ Entry(term=3, entry='set x=0'),
+ Entry(term=3, entry='set y=7'),
+ Entry(term=3, entry='set x=5'),
+ Entry(term=3, entry='set x=4')]
+

@@ -1,5 +1,3 @@
-# state_machine.py
-
 """
  “applier loop”
 
