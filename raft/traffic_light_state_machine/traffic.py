@@ -8,7 +8,7 @@ import operator
 # TODO: add client interactions. E.g., unscheduled button push. Use queue pattern.
 
 # time interval in seconds to fast-forward simulations
-SLEEP_BEAT = .5
+SLEEP_BEAT = 1
 
 class trafficLight:
     """Simulate a traffic light state machine."""
@@ -46,22 +46,22 @@ class trafficLight:
         if self.current_state == 'a':
             print(colorama.Fore.GREEN + 'G', end=' ')
             print(colorama.Fore.RED + 'R')
-            print(colorama.Fore.BLACK, end='')
+            print(colorama.Fore.BLUE, end='')
 
         if self.current_state == 'b':
             print(colorama.Fore.YELLOW + 'Y', end=' ')
             print(colorama.Fore.RED + 'R')
-            print(colorama.Fore.BLACK, end='')
+            print(colorama.Fore.BLUE, end='')
 
         if self.current_state == 'c':
             print(colorama.Fore.RED + 'R', end=' ')
             print(colorama.Fore.GREEN + 'G')
-            print(colorama.Fore.BLACK, end='')
+            print(colorama.Fore.BLUE, end='')
 
         if self.current_state == 'd':
             print(colorama.Fore.RED + 'R', end=' ')
             print(colorama.Fore.YELLOW + 'Y')
-            print(colorama.Fore.BLACK, end='')
+            print(colorama.Fore.BLUE, end='')
 
     def get_next_state(self):
 
@@ -77,7 +77,9 @@ class trafficLight:
 
     def start(self):
         while True:
-            print(f"clock: {self.clock}| t: {self.x_time} |", f"state: {self.current_state}", end=' ')
+            clock_format = str(self.clock).zfill(3)
+            time_format = str(self.x_time).zfill(3)
+            print(colorama.Fore.BLUE + f"clock: {clock_format}| t: {time_format} |", f"state: {self.current_state}", end=' ')
             self.print_state()
 
             time.sleep(SLEEP_BEAT)
