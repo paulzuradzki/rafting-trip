@@ -1,9 +1,11 @@
-19-Dec-19 15:46:52 - 76596 - root - INFO - BEFORE: 
+19-Dec-19 19:19:06 - 77690 - root - INFO - BEFORE: 
 []
 
-19-Dec-19 15:46:52 - 76596 - root - INFO - TRUE
-19-Dec-19 15:46:52 - 76596 - root - INFO - AFTER: 
-[Entry(term=1, entry='set x=1'),
- Entry(term=1, entry='set y=1'),
- Entry(term=1, entry='set y=9')]
+19-Dec-19 19:19:06 - 77690 - root - INFO - FALSE
+19-Dec-19 19:19:33 - 77690 - root - INFO - BEFORE: 
+[]
+
+19-Dec-19 19:19:33 - 77690 - root - INFO - TRUE
+19-Dec-19 19:19:33 - 77690 - root - INFO - AFTER: 
+[Entry(term=1, entry='set x=1')]
 

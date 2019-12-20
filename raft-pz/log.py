@@ -120,5 +120,5 @@ if __name__ == "__main__":
     entry6 = Entry(term=3, entry='set x=5')
     entry7 = Entry(term=3, entry='set x=4')
 
-    l.test_append_entries()
+    # l.test_append_entries()
 

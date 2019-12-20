@@ -1,7 +1,11 @@
 import log
+import config
 
 class Server:
-    def __init__(self):
+    def __init__(self, id=None, address=None):
+
+        self.id = id
+        self.address = address
 
         # persistent state
         self.log = log.log()
@@ -12,11 +16,32 @@ class Server:
         self.commit_ix = None
         self.last_applied = None
 
+    def get_peers(self) -> list:
+        peers = [s for s in SERVER_LIST if s != self]
+
+        return peers
+
+    def become_leader(self):
+
+        # I'm sorry future me...
+        self.__class__ = Leader
+
+        # for s in self.get_peers():
+        #     self.next_ix[s] = len(self.log)
+        #     self.match_ix = 0
+        #     self.prev_ix = len(self.log) - 1
+        #     self.prev_term = 1
+
 class Leader(Server):
-    def __init__(self):
+    def __init__(self, id=None, address=None):
         super().__init__()
 
-        self.follower_meta = follower_meta(self)
+        # leader stores follower metadata
+        self.next_ix =   {}
+        self.match_ix =  {}
+        self.prev_ix =   {}
+        self.prev_term = {}
+        self.become_leader()
 
     # def append_entries_rpc(self, follower):
     #
@@ -30,17 +55,6 @@ class Leader(Server):
     #
     #     return success_flag
 
-class follower_meta:
-    def __init__(self, leader):
-        self.next_ix = len(leader.log.entries) - 1  # zero-indexed; init to log index + 1
-        self.match_ix = 0
-        self.prev_ix = len(leader.log.entries) - 2
-
-        # term of last entry in log; this is the assumed prev_term for follower when leader appends entry
-        try:
-            self.prev_term = leader.log.entries[-1].term
-        except: 1
-
 class Follower(Server):
     pass
 
@@ -53,11 +67,15 @@ entry5 = log.Entry(term=3, entry='set y=7')
 entry6 = log.Entry(term=3, entry='set x=5')
 entry7 = log.Entry(term=3, entry='set x=4')
 
-s0 = Leader()
+SERVER_LIST = [Server(id=k, address=v) for k, v in config.SERVERS.items()]
+s0 = SERVER_LIST[0]
+peers = s0.get_peers()
+
 # s0.log.append_entries(-1, 1, [entry0])
 s0.log.append_entries(-1, 1, [entry0, entry1, entry3])
 # s0.log.append_entries(2, 2, [entry4])
 
-s1 = Follower()
+# s1 = Follower()
 # s0.append_entries_rpc(s1)
+
 
